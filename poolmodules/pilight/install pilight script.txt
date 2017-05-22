@@ -1,0 +1,39 @@
+http://raspberry.tips/hausautomatisierung/raspberry-pi-pilight-mit-433mhz-modulen-zur-hausautomatisierung/
+
+Pilight installieren
+
+Die Installation von pilight ist mittlerweile zum Glück via APT möglich sodass wir lediglich das pilight Repository zu unseren Quellen hinzufügen müssen, hierzu editieren wir die Datei sources.list mit dem Editor nano
+
+	sudo nano /etc/apt/sources.list
+
+Fügt am Ende der Datei folgende Zeile ein und Speichert die Datei mit STRG+X, Y und ENTER
+
+	deb http://apt.pilight.org/ stable main
+
+Um das Repository verwenden zu können benötigen wir noch den Schlüssel mit welchem heruntergeladene Pakete geprüft werden und aktualisieren und unsere Paketliste mit update
+
+sudo wget -O - http://apt.pilight.org/pilight.key | sudo apt-key add -
+sudo apt-get -y update
+
+Danach können wir pilight direkt über folgenden Befehl installieren
+
+sudo apt-get -y install pilight
+
+
+
+Pilight Grundeinrichtung
+
+Sobald die Installation abgeschlossen ist können wir die Grundkonfiguration vornehmen, das passiert in der Datei config.json welche wir wieder mit dem Editor Nano bearbeiten
+
+sudo nano /etc/pilight/config.json
+
+Da die Grundkonfiguration nun abgeschlossen ist können wir den Dienst starten.
+
+sudo service pilight start
+
+Die Webseite von Pilight ist nun via Browser erreichbar, hat allerdings, da wir noch keine Geräte definiert haben, noch nichts anzuzeigen.
+via http://<ip-adresse>:5001/
+
+
+Wichtig:
+Vor jeder Änderung an der Konfiguration von pilight müssen die Dienste via “sudo service pilight stop” gestoppt und danach wieder gestartet werden (sudo service pilight start).

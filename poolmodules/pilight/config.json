@@ -1,0 +1,81 @@
+{
+	"devices": {
+		"Power1": {
+			"protocol": [ "kaku_switch_old" ],
+			"id": [{
+				"id": 21,
+				"unit": 8
+			}],
+			"state": "off"
+		},
+		"Power2": {
+			"protocol": [ "kaku_switch_old" ],
+			"id": [{
+				"id": 19,
+				"unit": 8
+			}],
+			"state": "off"
+		},
+		"Power3": {
+			"protocol": [ "kaku_switch_old" ],
+			"id": [{
+				"id": 22,
+				"unit": 8
+			}],
+			"state": "off"
+		},
+		"Power4": {
+			"protocol": [ "kaku_switch_old" ],
+			"id": [{
+				"id": 23,
+				"unit": 0
+			}],
+			"state": "off"
+		}
+	},
+	"rules": {},
+	"gui": {
+		"Power1": {
+			"name": "Funkdose 1",
+			"group": [ "Funksteckdosen" ],
+			"media": [ "all" ]
+		},
+		"Power2": {
+			"name": "Funkdose 2",
+			"group": [ "Funksteckdosen" ],
+			"media": [ "all" ]
+		},
+		"Power3": {
+			"name": "Funkdose 3",
+			"group": [ "Funksteckdosen" ],
+			"media": [ "all" ]
+		},
+		"Power4": {
+			"name": "Funkdose 4",
+			"group": [ "Funksteckdosen" ],
+			"media": [ "all" ]
+		}
+	},
+	"settings": {
+		"log-level": 6,
+		"pid-file": "/var/run/pilight.pid",
+		"log-file": "/var/log/pilight.log",
+		"webserver-enable": 1,
+		"webserver-root": "/usr/local/share/pilight/",
+		"webserver-http-port": 5001,
+		"webserver-cache": 1
+	},
+	"hardware": {
+		"433gpio": {
+			"sender": 0,
+			"receiver": 1
+		}
+	},
+	"registry": {
+		"pilight": {
+			"version": {
+				"current": "7.0"
+			}
+		}
+	}
+}
